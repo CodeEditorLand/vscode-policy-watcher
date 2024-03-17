@@ -1,22 +1,22 @@
 {
-  "name": "@vscode/policy-watcher",
-  "version": "1.1.6",
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microsoft/vscode-policy-watcher.git"
-  },
-  "license": "MIT",
   "author": "João Moreno",
+  "dependencies": {
+    "bindings": "1.5.0",
+    "node-addon-api": "6.0.0"
+  },
+  "description": "",
+  "license": "MIT",
   "main": "index.js",
-  "types": "index.d.ts",
+  "name": "@vscode/policy-watcher",
   "release": {
     "branches": [
       "main"
     ]
   },
-  "dependencies": {
-    "bindings": "^1.5.0",
-    "node-addon-api": "^6.0.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/vscode-policy-watcher.git"
+  },
+  "types": "index.d.ts",
+  "version": "1.1.6"
 }
