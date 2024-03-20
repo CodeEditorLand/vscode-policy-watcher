@@ -1,22 +1,41 @@
 {
-  "name": "@vscode/policy-watcher",
-  "version": "1.1.6",
-  "description": "",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microsoft/vscode-policy-watcher.git"
-  },
-  "author": "João Moreno",
-  "license": "MIT",
-  "types": "index.d.ts",
-  "dependencies": {
-    "bindings": "1.5.0",
-    "node-addon-api": "8.0.0"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  }
+	"name": "@vscode/policy-watcher",
+	"version": "0.0.1",
+	"private": false,
+	"description": "",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"scripts": {
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+	},
+	"release": {
+		"branches": [
+			"main"
+		]
+	},
+	"dependencies": {
+		"bindings": "1.5.0",
+		"node-addon-api": "8.0.0"
+	},
+	"devDependencies": {
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
