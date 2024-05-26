@@ -1,51 +1,51 @@
 trigger:
-  branches:
-    include:
-      - main
+    branches:
+        include:
+            - main
 
 pr: [main]
 
 resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: microsoft/vscode-engineering
-      ref: main
-      endpoint: Monaco
+    repositories:
+        - repository: templates
+          type: github
+          name: microsoft/vscode-engineering
+          ref: main
+          endpoint: Monaco
 
 parameters:
-  - name: publishPackage
-    displayName: 🚀 Publish
-    type: boolean
-    default: false
+    - name: publishPackage
+      displayName: 🚀 Publish
+      type: boolean
+      default: false
 
 extends:
-  template: azure-pipelines/npm-package/pipeline.yml@templates
-  parameters:
-    npmPackages:
-      - name: vscode-policy-watcher
-        buildSteps:
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '3.11'
-          - script: npm ci
-        testPlatforms:
-          - name: Linux
-            nodeVersions: [18.17.x]
-          - name: MacOS
-            nodeVersions: [18.17.x]
-          - name: Windows
-            nodeVersions: [18.17.x]
-        testSteps:
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '3.11'
-          - script: npm ci
-            env:
-              npm_config_disturl: https://electronjs.org/headers
-              npm_config_target: 19.1.9
-              npm_config_runtime: electron
-              npm_config_build_from_source: true
-        apiScanSoftwareName: 'vscode-policy-watcher'
-        apiScanSoftwareVersion: '1.1'
-        publishPackage: ${{ parameters.publishPackage }}
+    template: azure-pipelines/npm-package/pipeline.yml@templates
+    parameters:
+        npmPackages:
+            - name: vscode-policy-watcher
+              buildSteps:
+                  - task: UsePythonVersion@0
+                    inputs:
+                        versionSpec: "3.11"
+                  - script: npm ci
+              testPlatforms:
+                  - name: Linux
+                    nodeVersions: [18.17.x]
+                  - name: MacOS
+                    nodeVersions: [18.17.x]
+                  - name: Windows
+                    nodeVersions: [18.17.x]
+              testSteps:
+                  - task: UsePythonVersion@0
+                    inputs:
+                        versionSpec: "3.11"
+                  - script: npm ci
+                    env:
+                        npm_config_disturl: https://electronjs.org/headers
+                        npm_config_target: 19.1.9
+                        npm_config_runtime: electron
+                        npm_config_build_from_source: true
+              apiScanSoftwareName: "vscode-policy-watcher"
+              apiScanSoftwareVersion: "1.1"
+              publishPackage: ${{ parameters.publishPackage }}
