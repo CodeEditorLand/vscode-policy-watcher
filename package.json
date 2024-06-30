@@ -1,15 +1,15 @@
 {
-	"dependencies": {
-		"bindings": "1.5.0",
-		"node-addon-api": "8.0.0"
-	},
+	"name": "@vscode/policy-watcher",
 	"description": "",
 	"main": "index.js",
-	"name": "@vscode/policy-watcher",
+	"types": "index.d.ts",
 	"release": {
 		"branches": [
 			"main"
 		]
 	},
-	"types": "index.d.ts"
+	"dependencies": {
+		"bindings": "1.5.0",
+		"node-addon-api": "8.0.0"
+	}
 }
