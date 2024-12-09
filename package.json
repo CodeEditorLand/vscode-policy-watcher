@@ -1,16 +1,16 @@
 {
-	"dependencies": {
-		"bindings": "1.5.0",
-		"node-addon-api": "8.3.0"
-	},
-	"description": "",
-	"devDependencies": {},
-	"main": "index.js",
 	"name": "@codeeditorland/policy-watcher",
+	"description": "",
+	"main": "index.js",
+	"types": "index.d.ts",
 	"release": {
 		"branches": [
 			"main"
 		]
 	},
-	"types": "index.d.ts"
+	"dependencies": {
+		"bindings": "1.5.0",
+		"node-addon-api": "8.3.0"
+	},
+	"devDependencies": {}
 }
